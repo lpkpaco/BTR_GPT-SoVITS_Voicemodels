@@ -21,7 +21,10 @@ and have acceptable performance in generating speech in
 
  ### Demos
  - Hitori Gotoh: あ。えっと。い、1年生の後藤一人です。あ。あの。初めまして。\
-   [audio (19).wav](https://github.com/user-attachments/files/22020146/audio.19.wav)
+   <vid src="https://github.com/user-attachments/assets/fa69767f-6448-428b-9891-35829cb81f04"></vid>
+   https://github.com/user-attachments/assets/fa69767f-6448-428b-9891-35829cb81f04
+
+
 
 ## List of available models
 <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/98/Hitori_Gotoh_Character_Design_2.png/revision/latest?cb=20220915114341" width="82" height="300">
