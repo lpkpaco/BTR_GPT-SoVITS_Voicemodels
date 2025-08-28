@@ -60,7 +60,7 @@ and have acceptable performance in generating speech in
   ~~- ryo-v1 (To be released)~~
 
 ## Future Work
-- [ ] Upload a few demos (Pure laziness)
+- [x] Upload a few demos (Pure laziness)
 - [ ] Finish and publish kita-v1 and ryo-v1
 - [ ] Add a more detailed description of this project in readme.md
 - [ ] Update the models by feeding them with more training data and adjusting parameters
