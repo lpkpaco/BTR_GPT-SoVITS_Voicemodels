@@ -25,6 +25,7 @@ and have acceptable performance in generating speech in
 ### Hitori Gotoh
 #### v2ProPlus models
   - gotoh-v1-3
+  	- gotoh-v1-3-1
 #### v4 models
   - gotoh-v1
   - gotoh-v1-1
