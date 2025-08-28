@@ -19,11 +19,12 @@ and have acceptable performance in generating speech in
 - zh
 - en
 
-### Demos
-#### - Hitori Gotoh: **あ。えっーと。い、1年生の後藤一人です。あ、あの、初めまして。**。\
+### Demos (Might not work on mobile devices. Trying viewing in browser)
+#### - Hitori Gotoh: **あ。えっーと。い、1年生の後藤一人です。あ、あの、初めまして。**。
+
 <video src="https://github.com/user-attachments/assets/e447a0e4-9a3c-452f-84fb-303309d6e953"></video>
   
-#### - Nijika Ichiji: **おはよう!今日も頑張ります。よし、いくよ！** \
+#### - Nijika Ichiji: **おはよう!今日も頑張ります。よし、いくよ！** 
 <video src="https://github.com/user-attachments/assets/8cb644c4-f74c-4408-b7b6-4be92995cdcc"></video>
 
 ## List of available models
