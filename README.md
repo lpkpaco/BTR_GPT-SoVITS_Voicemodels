@@ -21,10 +21,10 @@ and have acceptable performance in generating speech in
 
 ### Demos
 #### - Hitori Gotoh: **あ。えっと。い、1年生の後藤一人です。あ。あの。初めまして**。\
-<video src="https://github.com/user-attachments/assets/10d97ee9-ca8e-4df7-a361-fad865ef4159"/>
+<video src="https://github.com/user-attachments/assets/10d97ee9-ca8e-4df7-a361-fad865ef4159"></video>
   
 #### - Nijika Ichiji: **おはよう!今日も頑張ります。よし。いくよ！** \
-<video src="https://github.com/user-attachments/assets/8cb644c4-f74c-4408-b7b6-4be92995cdcc"/>
+<video src="https://github.com/user-attachments/assets/8cb644c4-f74c-4408-b7b6-4be92995cdcc"></video>
 
 ## List of available models
 <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/98/Hitori_Gotoh_Character_Design_2.png/revision/latest?cb=20220915114341" width="82" height="300">
