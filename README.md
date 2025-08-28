@@ -17,6 +17,8 @@ and have acceptable performance in generating speech in
 - en
 
 ## List of available models
+<img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/98/Hitori_Gotoh_Character_Design_2.png/revision/latest?cb=20220915114341" width="82" height="300">
+
 ### Hitori Gotoh
 #### v2ProPlus models
   - gotoh-v1-3
@@ -27,21 +29,27 @@ and have acceptable performance in generating speech in
   - gotoh-v1-3
     - gotoh-v1-3-1
 
+ <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/a/a8/Ikuyo_Kita_Character_Design_2.png/revision/latest?cb=20220915114342" width="82" height="300">
+ 
 ### Ikuyo Kita
   ~~- kita-v1 (To be released)~~
 
-### Ichiji Nijika
+ <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/92/Nijika_Ijichi_Character_Design_2.png/revision/latest?cb=20220915114343" width="82" height="300">
+ 
+### Nijika Ichiji
 #### v2ProPlus models
-    - nijika-v1-0-1
+- nijika-v1-0-1
 #### v4 models
   - nijika-v1
-    -nijika-v1-0-2
+    - nijika-v1-0-2
 
-### Yamada Ryo
+ <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/4/4a/Ryo_Yamada_Character_Design_2.png/revision/latest?cb=20220915114345" width="82" height="300">
+ 
+### Ryo Yamada
   ~~- ryo-v1 (To be released)~~
 
 ## Credits
-Thanks to the contributors of the following repository/project, this repository was made possible.
+Thanks to all the contributors of the following repository/project, this repository was made possible.
 - [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), with the main contributors including
 	- 花儿不哭
  	- 红血球AE3803
