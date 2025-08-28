@@ -21,7 +21,7 @@ and have acceptable performance in generating speech in
 
 ### Demos
 #### - Hitori Gotoh: **あ。えっと。い、1年生の後藤一人です。あ。あの。初めまして**。\
-<video src="https://github.com/user-attachments/assets/10d97ee9-ca8e-4df7-a361-fad865ef4159"></video>
+<video src="https://github.com/user-attachments/assets/e447a0e4-9a3c-452f-84fb-303309d6e953"></video>
   
 #### - Nijika Ichiji: **おはよう!今日も頑張ります。よし。いくよ！** \
 <video src="https://github.com/user-attachments/assets/8cb644c4-f74c-4408-b7b6-4be92995cdcc"></video>
