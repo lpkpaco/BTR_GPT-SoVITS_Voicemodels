@@ -3,7 +3,7 @@
 Contains text-to-speech voice models of different characters trained from voices from the anime **__"Bocchi the Rock!"__**.
 
 ## License 
-This repository is licensed under the ***CC BY-NC-SA 4.0*** license. For your information, a short summary on the license is provided [here](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This repository is licensed under the ***CC BY-NC-SA 4.0*** license. For your information, a short summary of the license is provided [here](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ## Disclaimer
 The contributors to this repository and projects listed in the [Credits](#credits) section bear no liability for any consequences arising from its use. Users are solely responsible for their usage of this repository.
