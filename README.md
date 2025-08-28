@@ -7,10 +7,10 @@ Contains text-to-speech voice models of different characters trained from voices
 This repository is licensed under the ***CC BY-NC-SA 4.0*** license. For your information, a short summary on the license is provided [here](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ## Disclaimer
-The contributors of this repository and projects mentioned in the [Credits](#credits) section are not liable for any consequences caused with this repository. Instead, users should be responsible with the usage of this repository.
+The contributors to this repository and projects listed in the [Credits](#credits) section bear no liability for any consequences arising from its use. Users are solely responsible for their usage of this repository.
 
 ## Description
-With the help of the tool provided in this repo: [RVC-Boss/GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), the .cptk and ,pth weight files are fine-tuned to clone the voice of characters in the anime.
+With the help of the tool provided in this repo: [RVC-Boss/GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), the .cptk and .pth weight files are fine-tuned to clone the voice of characters in the TV anime series ***Bocchi the Rock!***.
 
 Currently, the released models perform well in generating speech in
 - ja
