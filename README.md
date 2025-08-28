@@ -20,7 +20,7 @@ and have acceptable performance in generating speech in
 - en
 
 ### Demos (Might not work on mobile devices. Trying viewing in browser)
-#### - Hitori Gotoh: **あ。えっーと。い、1年生の後藤一人です。あ、あの、初めまして。**。
+#### - Hitori Gotoh: **あ。えっーと。い、1年生の後藤一人です。あ、あの、初めまして。**
 
 <video src="https://github.com/user-attachments/assets/e447a0e4-9a3c-452f-84fb-303309d6e953"></video>
   
