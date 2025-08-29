@@ -48,7 +48,7 @@ and have acceptable performance in generating speech in
 #### v2ProPlus models
   - kita-v1
 #### v4 models
-  - kita-v1
+  - kita-v1\
  		- kita-v1-0-1
 
 <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/92/Nijika_Ijichi_Character_Design_2.png/revision/latest?cb=20220915114343" width="82" height="300">
