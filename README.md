@@ -61,16 +61,16 @@ and have acceptable performance in generating speech in
 
 ### Installation
 #### For Windows users
-To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS).
-Download the models you wish to use, as well as the characters' corresponding reference audio file.
-Copy the model files into the corresponding GPT-SoVITS directories (i.e. .ckpt into SoVITS model folders and .pth into GPT model folders)
-**Remember to match the model versions (v4 models into folders labelled v4, etc.)**
-Start webui.bat (Default language is simplified Chinese. Edit the file by replacing zh_CN with en_US).
-Go to the inference page .
-Select the models you wish to use. Upload the reference audio as instructed. The reference audio text can be copied from the reference audio file names. (e.g. if the file name is xxxx.wav, then the reference text is xxxx)
-Select __ja__ as the reference audio language
-Input the text that you wish to convert to speech. Select the language from the drop-down list.
-Click start.
+To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS).\
+Download the models you wish to use, as well as the characters' corresponding reference audio file.\
+Copy the model files into the corresponding GPT-SoVITS directories (i.e. .ckpt into SoVITS model folders and .pth into GPT model folders)\
+**Remember to match the model versions (v4 models into folders labelled v4, etc.)**\
+Start webui.bat (Default language is simplified Chinese. Edit the file by replacing zh_CN with en_US).\
+Go to the inference page .\
+Select the models you wish to use. Upload the reference audio as instructed. The reference audio text can be copied from the reference audio file names. (e.g. if the file name is xxxx.wav, then the reference text is xxxx)\
+Select __ja__ as the reference audio language\
+Input the text that you wish to convert to speech. Select the language from the drop-down list.\
+Click start.\
 
 #### For Mac and Linux users
 Please refer to the documentation of the GPT-SoVITS directory. Further details will be added in the future.
