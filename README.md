@@ -76,7 +76,7 @@ Go to the inference page .\
 Select the models you wish to use. Upload the reference audio as instructed. The reference audio text can be copied from the reference audio file names. (e.g. if the file name is xxxx.wav, then the reference text is xxxx)\
 Select __ja__ as the reference audio language\
 Input the text that you wish to convert to speech. Select the language from the drop-down list.\
-Click start.\
+Click start.
 
 #### For Mac and Linux users
 Please refer to the documentation of the GPT-SoVITS directory. Further details will be added in the future.
