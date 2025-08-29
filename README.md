@@ -79,6 +79,7 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 - [x] Upload a few demos (Pure laziness)
 - [ ] Finish and publish kita-v1 and ryo-v1
 - [ ] Add a more detailed description of this project in readme.md
+- [ ] Update the Installation section for the new Python scripts
 - [ ] Update the models by feeding them with more training data and adjusting parameters
 - [ ] Publish a list of recommended parameters tailored for each character when inferencing and generating speech
 - [ ] Make a UI for generating voice models
