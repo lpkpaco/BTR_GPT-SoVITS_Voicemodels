@@ -20,9 +20,11 @@ and have acceptable performance in generating speech in
 
 ### Demos (Might not work on mobile devices. Trying viewing from computer or in browser)
 #### - Hitori Gotoh: **あ。えっーと。い、1年生の後藤一人です。あ、あの、初めまして。**
-
 <video src="https://github.com/user-attachments/assets/e447a0e4-9a3c-452f-84fb-303309d6e953"></video>
-  
+
+#### - Ikuyo Kita: **よろしくお願いします！キタちゃんと呼んでくださいよ！**
+<video src="https://github.com/user-attachments/assets/7d0dc1d0-8e0a-45e6-b743-c4f44bbd4190"></video>
+
 #### - Nijika Ichiji: **おはよう!今日も頑張ります。よし、いくよ！** 
 <video src="https://github.com/user-attachments/assets/8cb644c4-f74c-4408-b7b6-4be92995cdcc"></video>
 
@@ -43,9 +45,13 @@ and have acceptable performance in generating speech in
  <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/a/a8/Ikuyo_Kita_Character_Design_2.png/revision/latest?cb=20220915114342" width="82" height="300">
  
 ### Ikuyo Kita
-  ~~- kita-v1 (To be released)~~
+#### v2ProPlus models
+	- kita-v1
+#### v4 models
+	- kita-v1
+ 		- kita-v1-0-1
 
- <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/92/Nijika_Ijichi_Character_Design_2.png/revision/latest?cb=20220915114343" width="82" height="300">
+<img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/92/Nijika_Ijichi_Character_Design_2.png/revision/latest?cb=20220915114343" width="82" height="300">
  
 ### Nijika Ichiji
 #### v2ProPlus models
@@ -77,7 +83,9 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 
 ## Future Work
 - [x] Upload a few demos (Pure laziness)
-- [ ] Finish and publish kita-v1 and ryo-v1
+- [x] Finish and publish kita-v1
+- [ ] Finish and publish ryo-v1
+- [ ] Add update log
 - [ ] Add a more detailed description of this project in readme.md
 - [ ] Update the Installation section for the new Python scripts
 - [ ] Update the models by feeding them with more training data and adjusting parameters
