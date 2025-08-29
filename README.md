@@ -46,10 +46,10 @@ and have acceptable performance in generating speech in
  
 ### Ikuyo Kita
 #### v2ProPlus models
-	- kita-v1
+  - kita-v1
 #### v4 models
-	- kita-v1
- 		- kita-v1-0-1
+  - kita-v1
+    - kita-v1-0-1
 
 <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/92/Nijika_Ijichi_Character_Design_2.png/revision/latest?cb=20220915114343" width="82" height="300">
  
@@ -76,7 +76,7 @@ Go to the inference page .\
 Select the models you wish to use. Upload the reference audio as instructed. The reference audio text can be copied from the reference audio file names. (e.g. if the file name is xxxx.wav, then the reference text is xxxx)\
 Select __ja__ as the reference audio language\
 Input the text that you wish to convert to speech. Select the language from the drop-down list.\
-Click start.\
+Click start.
 
 #### For Mac and Linux users
 Please refer to the documentation of the GPT-SoVITS directory. Further details will be added in the future.
@@ -95,7 +95,7 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 
 ***The datasets used for training will not be published (at least for now)***
 ## Credits
-Thanks to all the contributors of the following repository/project, this repository was made possible.
+Thanks to all the contributors of the following repositories/projects, this repository was made possible.
 - [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), with the main contributors including
 	- 花儿不哭
  	- 红血球AE3803
