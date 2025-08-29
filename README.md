@@ -95,7 +95,7 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 
 ***The datasets used for training will not be published (at least for now)***
 ## Credits
-Thanks to all the contributors of the following repository/project, this repository was made possible.
+Thanks to all the contributors of the following repositories/projects, this repository was made possible.
 - [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), with the main contributors including
 	- 花儿不哭
  	- 红血球AE3803
