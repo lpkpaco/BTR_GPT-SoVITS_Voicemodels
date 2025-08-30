@@ -23,17 +23,17 @@ def apiinfer(text, lang, char, url):
         "prompt_text": prompt,            
         "prompt_lang": "ja",            
         "top_k": 15,                   
-        "top_p": 0.8,                   
-        "temperature": 0.7,             
+        "top_p": 0.9,                   
+        "temperature": 0.9,             
         "text_split_method": "cut0",  
         "batch_size": 1,             
         "batch_threshold": 0.75,      
         "split_bucket": True,         
         "speed_factor":1.0,           
-        "streaming_mode": False,     
+        "streaming_mode": True,     
         "seed": -1,                  
         "parallel_infer": True,       
-        "repetition_penalty": 1.35,   
+        "repetition_penalty": 1.5,   
         "sample_steps": 32,           
         "super_sampling": False       
     }
@@ -43,7 +43,7 @@ def apiinfer(text, lang, char, url):
             f.write(response.content)
             f.close()
         print("Audio generated and saved to output.wav")
-        return("Action completed. Saved to output.wav.")
+        return response.content, "Action completed. Saved to output.wav."
     else:
         print(f"Error: {response.status_code} - {response.text}")
         return("Unexpected Error")
