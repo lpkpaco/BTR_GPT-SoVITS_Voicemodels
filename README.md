@@ -90,7 +90,7 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 - [ ] Update the Installation section for the new Python scripts
 - [ ] Update the models by feeding them with more training data and adjusting parameters
 - [ ] Publish a list of recommended parameters tailored for each character when inferencing and generating speech
-- [ ] Make a UI for generating voice models
+- [x] Make a UI for generating voice models
 - [ ] Publish to the Release page
 
 ***The datasets used for training will not be published (at least for now)***
