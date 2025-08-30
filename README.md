@@ -22,14 +22,14 @@ and have acceptable performance in generating speech in
 - en
 
 ### Demos (Might not work on mobile devices. Trying viewing from computer or in browser)
-#### - Hitori Gotoh: **あ。えっーと。い、1年生の後藤一人です。あ、あの、初めまして。**
+#### - Hitori Gotoh: **あ。えっーと。い、1年生の後藤一人です。あ、あの、初めまして。** (gotoh-v1-3-1)
 <video src="https://github.com/user-attachments/assets/e447a0e4-9a3c-452f-84fb-303309d6e953"></video>
 
-#### - Ikuyo Kita: **よろしくお願いします！キタちゃんと呼んでくださいよ！**
+#### - Ikuyo Kita: **よろしくお願いします！キタちゃんと呼んでくださいよ！** (kita-v1-0-1)
 <video src="https://github.com/user-attachments/assets/7d0dc1d0-8e0a-45e6-b743-c4f44bbd4190"></video>
 
-#### - Nijika Ichiji: **おはよう!今日も頑張ります。よし、いくよ！** 
-<video src="https://github.com/user-attachments/assets/8cb644c4-f74c-4408-b7b6-4be92995cdcc"></video>
+#### - Nijika Ichiji: **おはようございます!  下北沢高校の二年生、いちじにじかです！** (nijika-v1-0-2)
+<video src="https://github.com/user-attachments/assets/178bd8e6-aa7a-48ba-92d0-f5db450a38e3"></video>
 
 ## List of available models
 <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/98/Hitori_Gotoh_Character_Design_2.png/revision/latest?cb=20220915114341" width="82" height="300">
@@ -50,6 +50,7 @@ and have acceptable performance in generating speech in
 ### Ikuyo Kita
 #### v2ProPlus models
   - kita-v1
+    - kita-v1-0-1
 #### v4 models
   - kita-v1
     - kita-v1-0-1
