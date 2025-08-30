@@ -1,7 +1,8 @@
 import gradio as gr
 from inference import start_backend
 from request import apiinfer, changeGPT, changeSoVITS
-from webbrowser import open as webopen
+from subprocess import run
+from platform import system
 print("Starting user interface. Importing modules and starting backend inferencing server.")
 start_backend()
 url = "http://127.0.0.1:9880/"
@@ -42,4 +43,10 @@ with gr.Blocks() as webui:
         status = gr.Textbox(label = "Output")
         button.click(fn = changeSoVITS, inputs = [gpt_input, url_input], outputs = status)
 webui.launch(server_name = "0.0.0.0", server_port = 8964)
-webopen("localhost:8964")
+print("User interface loaded.")
+if system() == "Windows":
+    run(["start", "localhost:8964"], shell=True)
+elif system() == "Darwin":
+    run(["open", "localhost:8964"])
+else:
+    run(["xdg-open", "localhost:8964"])
