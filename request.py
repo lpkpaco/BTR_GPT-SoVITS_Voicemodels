@@ -43,7 +43,7 @@ def apiinfer(text, lang, char, url):
             f.write(response.content)
             f.close()
         print("Audio generated and saved to output.wav")
-        return("Action completed")
+        return("Action completed. Saved to output.wav.")
     else:
         print(f"Error: {response.status_code} - {response.text}")
         return("Unexpected Error")
