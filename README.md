@@ -1,7 +1,7 @@
 # BTR GPT-SoVITS Voicemodels
 ![BTR_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bocchi_the_Rock%21_logo.svg/2560px-Bocchi_the_Rock%21_logo.svg.png)
 
-<img src="assets/readme/b.gif"></img>
+<img src="asset/readme/b.gif"></img>
 
 Contains text-to-speech voice models of different characters trained from voices from the anime **__"Bocchi the Rock!"__**.
 
@@ -109,4 +109,4 @@ Thanks to all the contributors of the following repositories/projects, this repo
 
 If you wish to correct this list, please approach me.
 
-<img src="assets/readme/a.gif"></img>
+<img src="asset/readme/a.gif"></img>
