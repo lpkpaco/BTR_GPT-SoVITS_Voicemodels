@@ -79,9 +79,10 @@ if ui_lang == "en_US":
             button = gr.Button("Start")
             status = gr.Textbox(label = "Output")
             audio = gr.Audio(label = "Generated TTS file will be displayed here.")
+            hidden_current_path = gr.Textbox(value = current_path, visible = False)
             button.click(
                 fn = apiinfer,
-                inputs = [inf_input, lang_input, char_input, url_input],
+                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path],
                 outputs = [audio, status]
             )
         with gr.Group():
@@ -92,7 +93,7 @@ if ui_lang == "en_US":
             refresh = gr.Button("Refresh list")
             button = gr.Button("Change GPT model")
             status = gr.Textbox(label = "Output")
-            hidden_path = gr.Textbox(value=current_path, visible=False)
+            hidden_path = gr.Textbox(value = current_path, visible = False)
             button.click(fn = changeGPT, inputs = [gpt_input, url_input, char_input, hidden_path], outputs = status)
             refresh.click(
                 fn = refresh_dropdowns_GPT,
@@ -114,7 +115,7 @@ if ui_lang == "en_US":
                 inputs = char_input,
                 outputs = sovits_input
             )
-    webui.launch(server_name = "0.0.0.0", server_port = 8100)
+    webui.launch(server_name = "0.0.0.0", server_port = 8100, share=True)
     print("User interface loaded. Please open it in your browser.")
 
 elif ui_lang == "zh_Hant":
@@ -173,7 +174,7 @@ elif ui_lang == "zh_Hant":
                 inputs = char_input,
                 outputs = sovits_input
             )
-    webui.launch(server_name = "0.0.0.0", server_port = 8100)
+    webui.launch(server_name = "0.0.0.0", server_port = 8100, share=True)
     print("使用者頁面完成加載。請在瀏覽器中打開。")
 
 else:
