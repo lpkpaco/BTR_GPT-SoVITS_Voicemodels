@@ -59,7 +59,8 @@ and have acceptable performance in generating speech in
  
 ### Nijika Ichiji
 #### v2ProPlus models
-- nijika-v1-0-1
+  - nijika-v1-0-1
+  - nijika-v1-1
 #### v4 models
   - nijika-v1
     - nijika-v1-0-2
