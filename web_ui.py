@@ -3,7 +3,6 @@ from inference import start_backend
 from request_webui import apiinfer, changeGPT, changeSoVITS
 import os
 from pathlib import Path
-import soundfile as sf
 dir_char_full = ""
 dir_char = ""
 current_path = str(Path(__file__).resolve().parent)
