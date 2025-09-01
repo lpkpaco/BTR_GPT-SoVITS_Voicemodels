@@ -1,6 +1,7 @@
 try:
     from request import apiinfer, changeGPT, changeSoVITS
     import torch
+    from platform import Path
 except:
     print("Missing function. Download the required files.")
     exit()
@@ -45,6 +46,7 @@ Enter character:
 """
 language = ""
 if __name__ == "__main__":
+    current_path = str(Path(__file__).resolve().parent)
     while True:
         print(cmdlist)
         resp = str(input("Select action: "))
@@ -60,7 +62,7 @@ if __name__ == "__main__":
             character = str(input(characterlist))
         elif resp == "3":
             reqtext = input(str("Input the text (This script only supports Japanese for now): "))
-            apiresp = apiinfer(reqtext, "ja", character, url)
+            apiresp = apiinfer(reqtext, "ja", character, url, current_path)
             print(apiresp)
             continue
         elif resp == "4":
