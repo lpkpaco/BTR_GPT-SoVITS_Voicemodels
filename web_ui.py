@@ -3,6 +3,7 @@ from inference import start_backend
 from request_webui import apiinfer, changeGPT, changeSoVITS
 import os
 from pathlib import Path
+import soundfile as sf
 dir_char_full = ""
 dir_char = ""
 current_path = str(Path(__file__).resolve().parent)
@@ -78,7 +79,7 @@ if ui_lang == "en_US":
             )
             button = gr.Button("Start")
             status = gr.Textbox(label = "Output")
-            audio = gr.Audio(label = "Generated TTS file will be displayed here.")
+            audio = gr.Audio(label = "Generated TTS file will be displayed here.", type = "filepath")
             hidden_current_path = gr.Textbox(value = current_path, visible = False)
             button.click(
                 fn = apiinfer,
@@ -131,7 +132,7 @@ elif ui_lang == "zh_Hant":
         with gr.Group():
             gr.Markdown("### 生成語音")
             inf_input = gr.Textbox(label ="輸入文本")
-            lang_input = gr.Textbox(label = "輸入文本語言。（目前僅支持日語和國語。如為日語，請輸入ja，國語請輸入zh，英語請輸入en）", value="ja")
+            lang_input = gr.Textbox(label = "輸入文本語言。（目前僅支持日語和國語。如為日語，請輸入ja，國語請輸入zh，英語請輸入en）")
             char_input = gr.Dropdown(
                 choices = ["gotoh", "kita", "nijika"],
                 label = "選擇角色"
@@ -139,9 +140,10 @@ elif ui_lang == "zh_Hant":
             button = gr.Button("生成")
             status = gr.Textbox(label = "狀態")
             audio = gr.Audio(label = "生成的語音會展示在此")
+            hidden_current_path = gr.Textbox(value = current_path, visible = False)
             button.click(
                 fn = apiinfer,
-                inputs = [inf_input, lang_input, char_input, url_input],
+                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path],
                 outputs = [audio, status]
             )
         with gr.Group():
@@ -152,7 +154,7 @@ elif ui_lang == "zh_Hant":
             refresh = gr.Button("更新模型清單")
             button = gr.Button("變更GPT模型")
             status = gr.Textbox(label = "狀態")
-            hidden_path = gr.Textbox(value=current_path, visible=False)
+            hidden_path = gr.Textbox(value = current_path, visible = False)
             button.click(fn = changeGPT, inputs = [gpt_input, url_input, char_input, hidden_path], outputs = status)
             refresh.click(
                 fn = refresh_dropdowns_GPT,

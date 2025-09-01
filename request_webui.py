@@ -1,7 +1,7 @@
 def apiinfer(text, lang, char, url, current_path):
     try:
         import requests
-        from platform import Path
+        from pydub import AudioSegment
     except:
         pass
     if char == "gotoh":
@@ -24,14 +24,14 @@ def apiinfer(text, lang, char, url, current_path):
         "prompt_text": prompt,            
         "prompt_lang": "ja",            
         "top_k": 15,                   
-        "top_p": 0.95,
-        "temperature": 0.7,             
+        "top_p": 0.95,                   
+        "temperature": 0.7,
         "text_split_method": "cut0",  
         "batch_size": 1,             
         "batch_threshold": 0.75,      
         "split_bucket": True,         
         "speed_factor":1.0,           
-        "streaming_mode": True,     
+        "streaming_mode": False,     
         "seed": -1,                  
         "parallel_infer": True,       
         "repetition_penalty": 1.5,   
@@ -40,11 +40,14 @@ def apiinfer(text, lang, char, url, current_path):
     }
     response = requests.post(ttsurl, json=payload)
     if response.status_code == 200:
-        with open(r"output.wav", "wb") as f:
+        with open("output.wav", "wb") as f:
             f.write(response.content)
             f.close()
         print("Audio generated and saved to output.wav")
-        return response.content, "Action completed. Saved to output.wav."
+        print("Converting to .mp3 for mobile device encoding...")
+        audio = AudioSegment.from_wav("output.wav")
+        audio.export("output.mp3", format="mp3")
+        return "output.mp3", "Action completed."
     else:
         print(f"Error: {response.status_code} - {response.text}")
         return("Unexpected Error")
