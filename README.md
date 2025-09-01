@@ -72,6 +72,18 @@ and have acceptable performance in generating speech in
 
 ### Installation
 #### For Windows users
+
+##### Web User Interface (Recommended)
+***To use this installation, the Python dependency Gradio must be installed.***\
+***To install, run `pip install gradio` in command shell or Powershell***\
+Place the .ckpt and .pth files in the active/(character-name)/ directory.\
+To launch the web user interface, start launch_web_ui.bat, A command shell will be launched.\
+Wait for it to run the script. Enter your language preference when prompted.\
+Visit `localhost:8100` in your browser.\
+Select a character from the drop-down list. Then refresh both the GPT and SoVITS model list.\
+Select the models from the drop-down list. Then follow the instructions to start generating speech files.\
+
+##### Inference.py
 To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS).\
 Download the models you wish to use, as well as the characters' corresponding reference audio file.\
 Copy the model files into the corresponding GPT-SoVITS directories (i.e. .ckpt into SoVITS model folders and .pth into GPT model folders)\
