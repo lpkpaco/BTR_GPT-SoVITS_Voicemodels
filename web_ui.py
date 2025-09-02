@@ -3,6 +3,7 @@ from inference import start_backend
 from request_webui import apiinfer, changeGPT, changeSoVITS
 import os
 from pathlib import Path
+import soundfile as sf
 dir_char_full = ""
 dir_char = ""
 current_path = str(Path(__file__).resolve().parent)
@@ -51,15 +52,25 @@ def refresh_dropdowns_SoVITS(char):
     )
 global url_input
 global char_input
+custom_css = """
+.gradio-container .image-container .download-button {
+    display: none !important;
+}
+
+.gradio-container .image-container img {
+    pointer-events: none !important;
+}
+"""
 ui_lang = input("""
 Select language:
 English -> en_US
+Japanese -> ja
 Traditional Chinese -> zh_Hant                
 
 Enter: 
 """)
 if ui_lang == "en_US":
-    with gr.Blocks() as webui:
+    with gr.Blocks(css=custom_css) as webui:
         with gr.Group():
             gr.Markdown("Web User Interface Tool")
             gr.Image(type = "filepath", value = "asset/readme/b.gif")
@@ -119,9 +130,9 @@ if ui_lang == "en_US":
     print("User interface loaded. Please open it in your browser.")
 
 elif ui_lang == "zh_Hant":
-    with gr.Blocks() as webui:
+    with gr.Blocks(css=custom_css) as webui:
         with gr.Group():
-            gr.Markdown("Web User Interface Tool")
+            gr.Markdown("使用者介面工具")
             gr.Image(type = "filepath", value = "asset/readme/b.gif")
         with gr.Group():
             url_input = gr.Textbox(label = "後端伺服器地址（如使用預設設置請勿變更）", value="http://127.0.0.1:9880/")
@@ -131,7 +142,7 @@ elif ui_lang == "zh_Hant":
         with gr.Group():
             gr.Markdown("### 生成語音")
             inf_input = gr.Textbox(label ="輸入文本")
-            lang_input = gr.Textbox(label = "輸入文本語言。（目前僅支持日語和國語。如為日語，請輸入ja，國語請輸入zh，英語請輸入en）")
+            lang_input = gr.Textbox(label = "輸入文本語言。（目前僅支持日語、英語和國語。如為日語，請輸入ja，國語請輸入zh，英語請輸入en）")
             char_input = gr.Dropdown(
                 choices = ["gotoh", "kita", "nijika"],
                 label = "選擇角色"
@@ -177,6 +188,66 @@ elif ui_lang == "zh_Hant":
             )
     webui.launch(server_name = "0.0.0.0", server_port = 8100, share=True)
     print("使用者頁面完成加載。請在瀏覽器中打開。")
+
+elif ui_lang == "ja":
+    with gr.Blocks(css=custom_css) as webui:
+        with gr.Group():
+            gr.Markdown("Webユーザーインターフェース")
+            gr.Image(type = "filepath", value = "asset/readme/b.gif")
+        with gr.Group():
+            url_input = gr.Textbox(label = "バックエンドサーバーのアドレス（デフォルト設定を使用する場合は変更しないでください）", value="http://127.0.0.1:9880/")
+            button = gr.Button("変わる")
+            status = gr.Textbox(label = "システムステータス")
+            button.click(fn = set_url, inputs = url_input, outputs=status)
+        with gr.Group():
+            gr.Markdown("### 音声を生成する")
+            inf_input = gr.Textbox(label ="テキスト入力")
+            lang_input = gr.Textbox(label = "テキストの言語を入力します。(日本語、英語、中国語のみがサポートされています。日本語の場合は「ja」、英語の場合は「en」、中国語の場合は「zh」と入力します。)")
+            char_input = gr.Dropdown(
+                choices = ["gotoh", "kita", "nijika"],
+                label = "キャラクターを選択"
+            )
+            button = gr.Button("生成する")
+            status = gr.Textbox(label = "システムステータス")
+            audio = gr.Audio(label = "生成された音声ファイルのプレビュー")
+            hidden_current_path = gr.Textbox(value = current_path, visible = False)
+            button.click(
+                fn = apiinfer,
+                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path],
+                outputs = [audio, status]
+            )
+        with gr.Group():
+            gpt_input = gr.Dropdown(
+                choices = [],
+                label = "リストからGPTモデルを選択"
+            )
+            refresh = gr.Button("リストを更新")
+            button = gr.Button("GPTモデルを変更する")
+            status = gr.Textbox(label = "システムステータス")
+            hidden_path = gr.Textbox(value = current_path, visible = False)
+            button.click(fn = changeGPT, inputs = [gpt_input, url_input, char_input, hidden_path], outputs = status)
+            refresh.click(
+                fn = refresh_dropdowns_GPT,
+                inputs = char_input,
+                outputs = gpt_input
+            )
+        with gr.Group():
+            sovits_input = gr.Dropdown(
+                choices = [],
+                label = "リストからSoVITSモデルを選択"
+            )
+            refresh = gr.Button("リストを更新")
+            button = gr.Button("SoVITSモデルを変更する")
+            status = gr.Textbox(label = "システムステータス")
+            hidden_path = gr.Textbox(value=current_path, visible=False)
+            button.click(fn = changeSoVITS, inputs = [sovits_input, url_input, char_input, hidden_path], outputs = status)
+            refresh.click(
+                fn = refresh_dropdowns_SoVITS,
+                inputs = char_input,
+                outputs = sovits_input
+            )
+    webui.launch(server_name = "0.0.0.0", server_port = 8100, share=True)
+    print("ユーザーインターフェースが読み込まれました。ブラウザで開いてください。")
 
 else:
     print("Unrecognized language option.")
