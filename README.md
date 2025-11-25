@@ -81,7 +81,7 @@ To launch the web user interface, start launch_web_ui.bat, A command shell will 
 Wait for it to run the script. Enter your language preference when prompted.\
 Visit `localhost:8100` in your browser.\
 Select a character from the drop-down list. Then refresh both the GPT and SoVITS model list.\
-Select the models from the drop-down list. Then follow the instructions to start generating speech files.\
+Select the models from the drop-down list. Then follow the instructions to start generating speech files.
 
 ##### Inference.py
 To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS).\
