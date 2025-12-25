@@ -122,4 +122,7 @@ Thanks to all the contributors of the following repositories/projects, this repo
 
 If you wish to correct this list, please approach me.
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=lpkpaco/BTR_GPT-SoVITS_Voicemodels&type=date&legend=top-left)](https://www.star-history.com/#lpkpaco/BTR_GPT-SoVITS_Voicemodels&type=date&legend=top-left)
 <img src="asset/readme/a.gif"></img>
