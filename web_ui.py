@@ -90,9 +90,13 @@ if ui_lang == "en_US":
             status = gr.Textbox(label = "Output")
             audio = gr.Audio(label = "Generated TTS file will be displayed here.", type = "filepath")
             hidden_current_path = gr.Textbox(value = current_path, visible = False)
+            with gr.Accordion(label = "Advanced Settings", open = False):
+                topk = gr.Slider(label = "top_k", step = 1, value = 15, minimum = 1, maximum = 100)
+                topp = gr.Slider(label = "top_p", step = 0.01, value = 0.9, minimum = 0.01, maximum = 1)
+                temp = gr.Slider(label = "temperature", step = 0.05, value = 0.7, minimum = 0.05, maximum = 1)
             button.click(
                 fn = apiinfer,
-                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path],
+                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path, topk, topp, temp],
                 outputs = [audio, status]
             )
         with gr.Group():
@@ -150,9 +154,13 @@ elif ui_lang == "zh_Hant":
             status = gr.Textbox(label = "狀態")
             audio = gr.Audio(label = "生成的語音會展示在此")
             hidden_current_path = gr.Textbox(value = current_path, visible = False)
+            with gr.Accordion(label = "Advanced Settings", open = False):
+                topk = gr.Slider(label = "top_k", step = 1, value = 15, minimum = 1, maximum = 100)
+                topp = gr.Slider(label = "top_p", step = 0.01, value = 0.9, minimum = 0.01, maximum = 1)
+                temp = gr.Slider(label = "temperature", step = 0.05, value = 0.7, minimum = 0.05, maximum = 1)
             button.click(
                 fn = apiinfer,
-                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path],
+                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path, topk, topp, temp],
                 outputs = [audio, status]
             )
         with gr.Group():
@@ -201,7 +209,7 @@ elif ui_lang == "ja":
         with gr.Group():
             gr.Markdown("### 音声を生成する")
             inf_input = gr.Textbox(label ="テキスト入力")
-            lang_input = gr.Textbox(label = "テキストの言語を入力します。(日本語、英語、中国語のみがサポートされています。日本語の場合は「ja」、英語の場合は「en」、中国語の場合は「zh」と入力します。)")
+            lang_input = gr.Textbox(label = "テキストの言語を入力します。(日本語、英語、中国語のみがサポートされています。日本語の場合は「ja」、英語の場合は「en」、中国語の場合は「zh」としてください。)")
             char_input = gr.Dropdown(
                 choices = ["gotoh", "kita", "nijika"],
                 label = "キャラクターを選択"
@@ -210,9 +218,13 @@ elif ui_lang == "ja":
             status = gr.Textbox(label = "システムステータス")
             audio = gr.Audio(label = "生成された音声ファイルのプレビュー")
             hidden_current_path = gr.Textbox(value = current_path, visible = False)
+            with gr.Accordion(label = "Advanced Settings", open = False):
+                topk = gr.Slider(label = "top_k", step = 1, value = 15, minimum = 1, maximum = 100)
+                topp = gr.Slider(label = "top_p", step = 0.01, value = 0.9, minimum = 0.01, maximum = 1)
+                temp = gr.Slider(label = "temperature", step = 0.05, value = 0.7, minimum = 0.05, maximum = 1)
             button.click(
                 fn = apiinfer,
-                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path],
+                inputs = [inf_input, lang_input, char_input, url_input, hidden_current_path, topk, topp, temp],
                 outputs = [audio, status]
             )
         with gr.Group():
@@ -245,7 +257,7 @@ elif ui_lang == "ja":
                 inputs = char_input,
                 outputs = sovits_input
             )
-    webui.launch(server_name = "0.0.0.0", server_port = 8100, share=True)
+    webui.launch(server_name = "0.0.0.0", server_port = 8100, share= True)
     print("ユーザーインターフェースが読み込まれました。ブラウザで開いてください。")
 
 else:

@@ -72,18 +72,6 @@ and have acceptable performance in generating speech in
 
 ### Installation
 #### For Windows users
-
-##### Web User Interface (Recommended)
-***To use this installation, the Python dependency Gradio must be installed.***\
-***To install, run `pip install gradio` in command shell or Powershell***\
-Place the .ckpt and .pth files in the active/(character-name)/ directory.\
-To launch the web user interface, start launch_web_ui.bat, A command shell will be launched.\
-Wait for it to run the script. Enter your language preference when prompted.\
-Visit `localhost:8100` in your browser.\
-Select a character from the drop-down list. Then refresh both the GPT and SoVITS model list.\
-Select the models from the drop-down list. Then follow the instructions to start generating speech files.
-
-##### Inference.py
 To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS).\
 Download the models you wish to use, as well as the characters' corresponding reference audio file.\
 Copy the model files into the corresponding GPT-SoVITS directories (i.e. .ckpt into SoVITS model folders and .pth into GPT model folders)\
@@ -104,11 +92,12 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 - [ ] Finish and publish ryo-v1
 - [ ] Add update log
 - [ ] Add a more detailed description of this project in readme.md
-- [ ] Update the Installation section for the new Python scripts
+- [x] Update the Installation section for the new Python scripts
 - [ ] Update the models by feeding them with more training data and adjusting parameters
 - [ ] Publish a list of recommended parameters tailored for each character when inferencing and generating speech
 - [x] Make a UI for generating voice models
 - [ ] Publish to the Release page
+- [ ] Add a requirements.txt
 
 ***The datasets used for training will not be published (at least for now)***
 ## Credits
@@ -122,7 +111,4 @@ Thanks to all the contributors of the following repositories/projects, this repo
 
 If you wish to correct this list, please approach me.
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=lpkpaco/BTR_GPT-SoVITS_Voicemodels&type=date&legend=top-left)](https://www.star-history.com/#lpkpaco/BTR_GPT-SoVITS_Voicemodels&type=date&legend=top-left)
 <img src="asset/readme/a.gif"></img>

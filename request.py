@@ -1,16 +1,16 @@
-def apiinfer(text, lang, char, url, current_path):
+def apiinfer(text, lang, char, url):
     try:
         import requests
     except:
         pass
     if char == "gotoh":
-        audiopath = current_path + "/asset/reference_audio/人様の前で演奏できるように毎日6時間練習を続けた結果.wav"
+        audiopath = r"H:\github\BTR_GPT-SoVITS_Voicemodels\models\Hitori_Gotoh\reference_audio\人様の前で演奏できるように毎日6時間練習を続けた結果.wav" #Replace with your full path
         prompt = "人様の前で演奏できるように毎日6時間練習を続けた結果"
     elif char == "kita":
-        audiopath = current_path + "/asset/reference_audio/でも私、いくら練習しても本当にギター弾けなかったの.wav"
+        audiopath = r"H:\github\BTR_GPT-SoVITS_Voicemodels\models\Ikuyo_Kita\reference_audio\でも私、いくら練習しても本当にギター弾けなかったの.wav" #Replace with your full path
         prompt = "でも私、いくら練習しても本当にギター弾けなかったの"
     elif char == "nijika":
-        audiopath = current_path + "/asset/reference_audio/私、下北沢高校2年、いちちにじか.wav"
+        audiopath = r"H:\github\BTR_GPT-SoVITS_Voicemodels\models\Ichiji_Nijika\reference_audio\私、下北沢高校2年、いちちにじか.wav" #Replace with your full path
         prompt = "私、下北沢高校2年、いちちにじか"
     else:
         return("Character not recognised")

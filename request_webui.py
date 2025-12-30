@@ -1,4 +1,4 @@
-def apiinfer(text, lang, char, url, current_path):
+def apiinfer(text, lang, char, url, current_path, topk, topp, temp):
     try:
         import requests
         from pydub import AudioSegment
@@ -23,9 +23,9 @@ def apiinfer(text, lang, char, url, current_path):
         "aux_ref_audio_paths": [],    
         "prompt_text": prompt,            
         "prompt_lang": "ja",            
-        "top_k": 15,                   
-        "top_p": 0.95,                   
-        "temperature": 0.7,
+        "top_k": topk,                   
+        "top_p": topp,                   
+        "temperature": temp,
         "text_split_method": "cut0",  
         "batch_size": 1,             
         "batch_threshold": 0.75,      
@@ -33,7 +33,7 @@ def apiinfer(text, lang, char, url, current_path):
         "speed_factor":1.0,           
         "streaming_mode": False,     
         "seed": -1,                  
-        "parallel_infer": True,       
+        "parallel_infer": False,       
         "repetition_penalty": 1.5,   
         "sample_steps": 32,           
         "super_sampling": False       
