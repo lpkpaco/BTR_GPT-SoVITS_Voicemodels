@@ -1,10 +1,9 @@
-# badges
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lpkpaco/BTR_GPT-SoVITS_Voicemodels)
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 <img src="https://img.shields.io/badge/CC--BY--SA--4.0-lightgrey?style=for-the-badge">
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lpkpaco/BTR_GPT-SoVITS_Voicemodels)
 
 # BTR GPT-SoVITS Voicemodels
-![BTR_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bocchi_the_Rock%21_logo.svg/2560px-Bocchi_the_Rock%21_logo.svg.png)
+![BTR_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bocchi_the_Rock%21_logo.svg/3840px-Bocchi_the_Rock%21_logo.svg.png)
 
 <img src="asset/readme/b.gif"></img>
 
