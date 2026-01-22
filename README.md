@@ -1,5 +1,6 @@
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 <img src="https://img.shields.io/badge/CC--BY--SA--4.0-lightgrey?style=for-the-badge">
+
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lpkpaco/BTR_GPT-SoVITS_Voicemodels)
 
 # BTR GPT-SoVITS Voicemodels
