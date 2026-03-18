@@ -1,3 +1,6 @@
+# Important Notice
+If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).
+
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 <img src="https://img.shields.io/badge/CC--BY--SA--4.0-lightgrey?style=for-the-badge">
 
@@ -79,6 +82,7 @@ and have acceptable performance in generating speech in
 #### For Windows users
 To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS).\
 Download the models you wish to use, as well as the characters' corresponding reference audio file.\
+**If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).**
 Copy the model files into the corresponding GPT-SoVITS directories (i.e. .ckpt into SoVITS model folders and .pth into GPT model folders)\
 **Remember to match the model versions (v4 models into folders labelled v4, etc.)**\
 Start webui.bat (Default language is simplified Chinese. Edit the file by replacing zh_CN with en_US).\
