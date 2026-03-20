@@ -40,6 +40,10 @@ and have acceptable performance in generating speech in
 <video src="https://github.com/user-attachments/assets/178bd8e6-aa7a-48ba-92d0-f5db450a38e3"></video>
 
 ## List of available models
+
+#### Model naming pattern: [character-identifier]-[version]-[subversion]
+e.g. gotoh-v1-3 -> Voice model of Hitori Gotoh, version 1.3.1 (better performance than version gotoh-v1-3, which stands for version 1.3)
+
 <img src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/98/Hitori_Gotoh_Character_Design_2.png/revision/latest?cb=20220915114341" width="82" height="300">
 
 ### Hitori Gotoh
@@ -107,10 +111,14 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 - [x] Make a UI for generating voice models
 - [ ] Publish to the Release page
 - [X] Add a requirements.txt
+- [ ] FAQ section
 
 ***The datasets used for training will not be published (at least for now)***
 
 ## Changelog
+##### 2026-03-20 - Hugging Face Migration
+- Migrated models of older versions/archived models to the related Hugging Face repository. [https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels)
+
 ##### 2026-03-20 - Changelog and Requirements.txt
 - Implemented Changelog in readme.md
 - Added requirements.txt
