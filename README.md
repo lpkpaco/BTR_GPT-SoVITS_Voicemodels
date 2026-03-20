@@ -77,9 +77,10 @@ and have acceptable performance in generating speech in
 
 ### Installation
 #### For Windows users
-To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS).\
+To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS).(For the installation guide of this repository, please check their instructions)\
+Run `pip install -r requirements.txt` to install the required dependencies.\
 Download the models you wish to use, as well as the characters' corresponding reference audio file.\
-Copy the model files into the corresponding GPT-SoVITS directories (i.e. .ckpt into SoVITS model folders and .pth into GPT model folders)\
+Copy the model files into the corresponding GPT-SoVITS directories (i.e. .ckpt into SoVITS model folders and .pth into GPT model folders).\
 **Remember to match the model versions (v4 models into folders labelled v4, etc.)**\
 Start webui.bat (Default language is simplified Chinese. Edit the file by replacing zh_CN with en_US).\
 Go to the inference page .\
@@ -95,7 +96,7 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 - [x] Upload a few demos (Pure laziness)
 - [x] Finish and publish kita-v1
 - [ ] Finish and publish ryo-v1
-- [ ] Add update log
+- [X] Add update log
 - [ ] Add a more detailed description of this project in readme.md
 - [x] Update the Installation section for the new Python scripts
 - [ ] Update the models by feeding them with more training data and adjusting parameters
@@ -105,6 +106,69 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 - [ ] Add a requirements.txt
 
 ***The datasets used for training will not be published (at least for now)***
+
+## Changelog
+##### 2026-03-20 - Changelog Addition
+- Implemented Changelog into readme.md
+
+##### 2026-01-22 - Hotfix 2
+- Improved readme.md formatting.
+
+##### 2026-01-22 - Hotfix
+- Improved readme.md formatting and fixed logo not loading.
+
+##### 2026-01-22 - General Updates
+- Added DeepWiki and other badges to readme.md.
+
+##### 2025-12-30 - Advanced TTS Features and UI Improvements
+- Added advanced TTS sliders (top_k/top_p/temperature).
+- Fixed minor UI text/whitespace and added advanced TTS settings.
+- Removed Platform module usage.
+- Updated the Future Work section in readme.md.
+
+##### 2025-12-25 - Star History Addition
+- Added Star History chart.
+
+##### 2025-11-25 - README Update
+- Updated README.md with general improvements.
+
+##### 2025-09-02 - Minor fixes and Japanese Localization
+- Removed unused imports.
+- Removed unused module import.
+- Added Japanese localisation for web UI.
+
+##### 2025-09-02 - Audio Format Fixes
+- Fixed .wav file corruption issue and the known audio issue mentioned on 2025-08-31 on local machine.
+- Added mp3 codec support for mobile users.
+
+##### 2025-09-02 - Repository Merge
+- Merged branch 'main' from remote repository.
+
+##### 2025-09-01 - Script and Model Updates
+- Updated README.md.
+- Updated request.py.
+- Updated inference.py.
+- Added nijika-v1-1 v2ProPlus models.
+- Improved script functionality.
+
+##### 2025-08-31 - Web UI Enhancements and Traditional Chinese Localization
+- Added direct model selection list.
+- Created request_webui.py for web UI requests.
+- Added traditional Chinese localization for web UI.
+- Added audio preview functionality.
+- Known issue: When downloading audio file from web UI, no extension name is provided but the audio file works properly after manually adding the extension name .wav for it.
+- Updated README.md.
+
+##### 2025-08-31
+- Renamed assets/ -> asset/.
+- Added kita-v1-0-1 v2ProPlus models.
+
+##### 2025-08-30
+- Updated README.md (multiple updates).
+- Created assets directory.
+- Added .bat file to instantly launch script (launch_web_ui.bat).
+- Modified web_ui.py to auto-open browser based on operating system (Windows, macOS, Linux).
+
 ## Credits
 Thanks to all the contributors of the following repositories/projects, this repository was made possible.
 - [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS), with the main contributors including
