@@ -129,6 +129,9 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 ***The datasets used for training will not be published (at least for now)***
 
 ## Changelog
+##### 2026-03-21 - Updated readme.md
+- The title is pretty self-explainatory.
+
 ##### 2026-03-20 - Hugging Face Migration
 - Migrated models of older versions/archived models to the related Hugging Face repository. [https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels)
 
