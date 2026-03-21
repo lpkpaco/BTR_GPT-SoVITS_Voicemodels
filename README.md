@@ -1,12 +1,13 @@
 # Important Notice
-If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).
+If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).\
+Check the Installation [Installation](#installation) section for more information.
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 <img src="https://img.shields.io/badge/CC--BY--SA--4.0-lightgrey?style=for-the-badge">
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lpkpaco/BTR_GPT-SoVITS_Voicemodels)
 
-# BTR GPT-SoVITS Voicemodels
+# Bocchi-The-Rock-GPT-SoVITS-Models/ (Formerly named BTR GPT-SoVITS Voicemodels)
 ![BTR_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bocchi_the_Rock%21_logo.svg/3840px-Bocchi_the_Rock%21_logo.svg.png)
 
 <img src="asset/readme/b.gif"></img>
@@ -38,6 +39,12 @@ and have acceptable performance in generating speech in
 
 #### - Nijika Ichiji: **おはようございます!  下北沢高校の二年生、いちじにじかです！** (nijika-v1-0-2)
 <video src="https://github.com/user-attachments/assets/178bd8e6-aa7a-48ba-92d0-f5db450a38e3"></video>
+
+## Get started
+
+You may refer to [this DeepWiki page](https://deepwiki.com/lpkpaco/BTR_GPT-SoVITS_Voicemodels) with detailed explanations and illustrations for better understanding. Please be reminded that DeepWiki utilizes AI to generate Wiki Pages and can make mistakes. 
+
+The official information and installation guidelines are included below. Please mainly refer to them.
 
 ## List of available models
 
@@ -83,6 +90,11 @@ e.g. gotoh-v1-3 -> Voice model of Hitori Gotoh, version 1.3.1 (better performanc
   ~~- ryo-v1 (To be released)~~
 
 ### Installation
+#### Important
+**Please make sure that you have Git LFS installed before cloning this repository.**
+**Git LFS [official site/download page](https://git-lfs.com/)**
+**If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels). A download script will be developed in the near future.**
+
 #### For Windows users
 To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS). Please refer to the installation guide of this repository.\
 Download the models you wish to use, as well as the characters' corresponding reference audio file.\
@@ -111,6 +123,7 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 - [x] Make a UI for generating voice models
 - [ ] Publish to the Release page
 - [X] Add a requirements.txt
+- [ ] Hugging Face Model Download Script
 - [ ] FAQ section
 
 ***The datasets used for training will not be published (at least for now)***
