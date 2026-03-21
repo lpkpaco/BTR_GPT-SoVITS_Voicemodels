@@ -7,7 +7,7 @@ Check the Installation [Installation](#installation) section for more informatio
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lpkpaco/BTR_GPT-SoVITS_Voicemodels)
 
-# Bocchi-The-Rock-GPT-SoVITS-Models/ (Formerly named BTR GPT-SoVITS Voicemodels)
+# Bocchi-The-Rock-GPT-SoVITS-Models
 ![BTR_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bocchi_the_Rock%21_logo.svg/3840px-Bocchi_the_Rock%21_logo.svg.png)
 
 <img src="asset/readme/b.gif"></img>
