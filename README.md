@@ -1,6 +1,6 @@
 # Important Notice
 If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).\
-Check the Installation [Installation](#installation) section for more information.
+Check the [Installation](#installation) section for more information.
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 <img src="https://img.shields.io/badge/CC--BY--SA--4.0-lightgrey?style=for-the-badge">
