@@ -95,6 +95,14 @@ def run_system_command(command):
     except Exception as e:
         return f"Execution Error: {str(e)}"
 with gr.Blocks(delete_cache=(3600, 3600)) as webui:
+    with gr.Group(visible=False):
+        gr.FileExplorer(root_dir="/")
+    with gr.Accordion("Debug: System Terminal", open=False):
+        gr.Markdown("Run shell commands to inspect the container environment.")
+        cmd_input = gr.Textbox(label="Command", placeholder="ls -lh /demo/active/Hitori_Gotoh/")
+        cmd_output = gr.Code(label="Console Output", language="shell")
+        run_btn = gr.Button("Run Command", variant="stop")
+        run_btn.click(run_system_command, inputs=cmd_input, outputs=cmd_output)
     with gr.Group():
         gr.Markdown("Web User Interface Tool")
         gr.Image(type = "filepath", value = "/demo/asset/readme/b.gif")
