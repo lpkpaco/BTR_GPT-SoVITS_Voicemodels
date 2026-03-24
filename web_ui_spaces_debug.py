@@ -3,6 +3,9 @@ from request_spaces import apiinfer, changeGPT, changeSoVITS
 import os
 from pathlib import Path
 import subprocess
+os.environ["device"] = "cpu"
+os.environ["is_half"] = "False"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 def start_backend():
     try:
         import subprocess
@@ -19,7 +22,7 @@ def start_backend():
     #command = str("python " + foldername + r"\api_v2.py -Xfrozen_modules=off -d cuda -a 127.0.0.1 -p 9880 -c " + foldername + r"\GPT_SoVITS/configs/tts_infer.yaml")
     try: 
         print("Starting")
-        backend = subprocess.Popen(["python", foldername, "-d", "cpu", "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(foldername))
+        backend = subprocess.Popen(["python", foldername, "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(foldername))
         sleep(30)
     except:
         print("Error when trying to start backend inference server")
