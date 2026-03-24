@@ -17,7 +17,7 @@ def start_backend():
     global url
     global command
     foldername = r"/demo/gpt-sovits/api_v2.py" #Paste the directory name of the decompressed GPT-SoVITS directory here. Please use full path. (If the folder name is xxx, then enter \xxx)
-    url = "http://127.0.0.1:9880/"
+    url = "http://0.0.0.0:9880/"
     #command = str("python " + foldername + r"\api_v2.py -Xfrozen_modules=off -d cuda -a 127.0.0.1 -p 9880 -c " + foldername + r"\GPT_SoVITS/configs/tts_infer.yaml")
     try: 
         print("Starting")
@@ -32,7 +32,7 @@ dir_char = ""
 current_path = str(Path(__file__).resolve().parent)
 print("Starting user interface. Importing modules and starting backend inferencing server.")
 start_backend()
-url = "http://127.0.0.1:9880/"
+url = "http://0.0.0.0:9880/"
 print("Backend server started. Compiling user interface.")
 OUT_DIR = Path("/demo/outputs")
 OUT_DIR.mkdir(exist_ok=True)
@@ -87,6 +87,8 @@ custom_css = """
 }
 """
 with gr.Blocks(delete_cache=(3600, 3600)) as webui:
+    with gr.Group():
+        gr.FileExplorer(root_dir="/")
     with gr.Group():
         gr.Markdown("Web User Interface Tool")
         gr.Image(type = "filepath", value = "/demo/asset/readme/b.gif")
