@@ -2,7 +2,7 @@ import gradio as gr
 from request_spaces import apiinfer, changeGPT, changeSoVITS
 import os
 from pathlib import Path
-import torch
+import subprocess
 def start_backend():
     try:
         import subprocess
@@ -11,8 +11,6 @@ def start_backend():
     except:
         print("Subprocess and Time modules not found.")
         exit()
-    print("Cuda status: " + str(torch.cuda.is_available()))
-    sleep(3)
     print("Starting backend server. Takes around 30 seconds")
     global url
     global command
@@ -86,9 +84,23 @@ custom_css = """
     pointer-events: none !important;
 }
 """
+def run_system_command(command):
+    try:
+        # We use subprocess to run the command and capture both success and error messages
+        result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=15)
+        output = f"--- STDOUT ---\n{result.stdout}\n\n--- STDERR ---\n{result.stderr}"
+        return output
+    except Exception as e:
+        return f"Execution Error: {str(e)}"
 with gr.Blocks(delete_cache=(3600, 3600)) as webui:
     with gr.Group():
         gr.FileExplorer(root_dir="/")
+    with gr.Accordion("Debug: System Terminal", open=False):
+        gr.Markdown("Run shell commands to inspect the container environment.")
+        cmd_input = gr.Textbox(label="Command", placeholder="ls -lh /demo/active/Hitori_Gotoh/")
+        cmd_output = gr.Code(label="Console Output", language="bash")
+        run_btn = gr.Button("Run Command", variant="stop")
+        run_btn.click(run_system_command, inputs=cmd_input, outputs=cmd_output)
     with gr.Group():
         gr.Markdown("Web User Interface Tool")
         gr.Image(type = "filepath", value = "/demo/asset/readme/b.gif")
