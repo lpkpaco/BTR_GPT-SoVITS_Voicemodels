@@ -129,6 +129,9 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 ***The datasets used for training will not be published (at least for now)***
 
 ## Changelog
+##### 2026-03-24 Added files for Hugging Face Docker Spaces
+- Added specific Python scripts to run with HF Docker Spaces.
+
 ##### 2026-03-21 - Updated readme.md
 - The title is pretty self-explainatory.
 

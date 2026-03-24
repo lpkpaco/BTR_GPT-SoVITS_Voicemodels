@@ -154,7 +154,7 @@ elif ui_lang == "zh_Hant":
             status = gr.Textbox(label = "狀態")
             audio = gr.Audio(label = "生成的語音會展示在此")
             hidden_current_path = gr.Textbox(value = current_path, visible = False)
-            with gr.Accordion(label = "Advanced Settings", open = False):
+            with gr.Accordion(label = "進階設定", open = False):
                 topk = gr.Slider(label = "top_k", step = 1, value = 15, minimum = 1, maximum = 100)
                 topp = gr.Slider(label = "top_p", step = 0.01, value = 0.9, minimum = 0.01, maximum = 1)
                 temp = gr.Slider(label = "temperature", step = 0.05, value = 0.7, minimum = 0.05, maximum = 1)
@@ -218,7 +218,7 @@ elif ui_lang == "ja":
             status = gr.Textbox(label = "システムステータス")
             audio = gr.Audio(label = "生成された音声ファイルのプレビュー")
             hidden_current_path = gr.Textbox(value = current_path, visible = False)
-            with gr.Accordion(label = "Advanced Settings", open = False):
+            with gr.Accordion(label = "詳細設定", open = False):
                 topk = gr.Slider(label = "top_k", step = 1, value = 15, minimum = 1, maximum = 100)
                 topp = gr.Slider(label = "top_p", step = 0.01, value = 0.9, minimum = 0.01, maximum = 1)
                 temp = gr.Slider(label = "temperature", step = 0.05, value = 0.7, minimum = 0.05, maximum = 1)
