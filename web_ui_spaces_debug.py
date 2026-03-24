@@ -86,7 +86,6 @@ custom_css = """
 """
 def run_system_command(command):
     try:
-        # We use subprocess to run the command and capture both success and error messages
         result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=15)
         output = f"--- STDOUT ---\n{result.stdout}\n\n--- STDERR ---\n{result.stderr}"
         return output
@@ -98,7 +97,7 @@ with gr.Blocks(delete_cache=(3600, 3600)) as webui:
     with gr.Accordion("Debug: System Terminal", open=False):
         gr.Markdown("Run shell commands to inspect the container environment.")
         cmd_input = gr.Textbox(label="Command", placeholder="ls -lh /demo/active/Hitori_Gotoh/")
-        cmd_output = gr.Code(label="Console Output", language="bash")
+        cmd_output = gr.Code(label="Console Output", language="shell")
         run_btn = gr.Button("Run Command", variant="stop")
         run_btn.click(run_system_command, inputs=cmd_input, outputs=cmd_output)
     with gr.Group():
