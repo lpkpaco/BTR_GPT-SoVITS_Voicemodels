@@ -2,7 +2,10 @@ import gradio as gr
 from request_spaces import apiinfer, changeGPT, changeSoVITS
 import os
 from pathlib import Path
-import torch
+import subprocess
+os.environ["device"] = "cpu"
+os.environ["is_half"] = "False"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 def start_backend():
     try:
         import subprocess
@@ -11,17 +14,15 @@ def start_backend():
     except:
         print("Subprocess and Time modules not found.")
         exit()
-    print("Cuda status: " + str(torch.cuda.is_available()))
-    sleep(3)
     print("Starting backend server. Takes around 30 seconds")
     global url
     global command
-    foldername = r"D:\GPT-SoVITS\api_v2.py" #Paste the directory name of the decompressed GPT-SoVITS directory here. Please use full path. (If the folder name is xxx, then enter \xxx)
-    url = "http://127.0.0.1:9880/"
+    foldername = r"/demo/gpt-sovits/api_v2.py"
+    url = "http://0.0.0.0:9880/"
     #command = str("python " + foldername + r"\api_v2.py -Xfrozen_modules=off -d cuda -a 127.0.0.1 -p 9880 -c " + foldername + r"\GPT_SoVITS/configs/tts_infer.yaml")
     try: 
         print("Starting")
-        backend = subprocess.Popen(["python", foldername], shell=False, cwd=os.path.dirname(foldername))
+        backend = subprocess.Popen(["python", foldername, "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(foldername))
         sleep(30)
     except:
         print("Error when trying to start backend inference server")
@@ -32,9 +33,9 @@ dir_char = ""
 current_path = str(Path(__file__).resolve().parent)
 print("Starting user interface. Importing modules and starting backend inferencing server.")
 start_backend()
-url = "http://127.0.0.1:9880/"
+url = "http://0.0.0.0:9880/"
 print("Backend server started. Compiling user interface.")
-OUT_DIR = Path("./outputs")
+OUT_DIR = Path("/demo/outputs")
 OUT_DIR.mkdir(exist_ok=True)
 def list_gpt(char):
     if char == "gotoh":
@@ -86,6 +87,13 @@ custom_css = """
     pointer-events: none !important;
 }
 """
+def run_system_command(command):
+    try:
+        result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=15)
+        output = f"--- STDOUT ---\n{result.stdout}\n\n--- STDERR ---\n{result.stderr}"
+        return output
+    except Exception as e:
+        return f"Execution Error: {str(e)}"
 with gr.Blocks(delete_cache=(3600, 3600)) as webui:
     with gr.Group():
         gr.Markdown("Web User Interface Tool")
