@@ -14,12 +14,12 @@ def start_backend():
     print("Starting backend server. Takes around 30 seconds")
     global url
     global command
-    foldername = r"/demo/gpt-sovits/api_v2.py" #Paste the directory name of the decompressed GPT-SoVITS directory here. Please use full path. (If the folder name is xxx, then enter \xxx)
+    foldername = r"/demo/gpt-sovits/api_v2.py"
     url = "http://0.0.0.0:9880/"
     #command = str("python " + foldername + r"\api_v2.py -Xfrozen_modules=off -d cuda -a 127.0.0.1 -p 9880 -c " + foldername + r"\GPT_SoVITS/configs/tts_infer.yaml")
     try: 
         print("Starting")
-        backend = subprocess.Popen(["python", foldername], shell=False, cwd=os.path.dirname(foldername))
+        backend = subprocess.Popen(["python", foldername, "-d", "cpu", "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(foldername))
         sleep(30)
     except:
         print("Error when trying to start backend inference server")
