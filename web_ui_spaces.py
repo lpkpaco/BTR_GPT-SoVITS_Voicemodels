@@ -97,7 +97,7 @@ def run_system_command(command):
 with gr.Blocks(delete_cache=(3600, 3600)) as webui:
     with gr.Group(visible=False):
         gr.FileExplorer(root_dir="/")
-    with gr.Accordion("Debug: System Terminal", open=False):
+    with gr.Accordion("Debug: System Terminal", open=False, visible=False):
         gr.Markdown("Run shell commands to inspect the container environment.")
         cmd_input = gr.Textbox(label="Command", placeholder="ls -lh /demo/active/Hitori_Gotoh/")
         cmd_output = gr.Code(label="Console Output", language="shell")
