@@ -90,11 +90,15 @@ e.g. gotoh-v1-3 -> Voice model of Hitori Gotoh, version 1.3.1 (better performanc
   ~~- ryo-v1 (To be released)~~
 
 ### Installation
+### Docker
+Installing through Docker is the most reliable and convenient way on Windows/Linux. Please check the [Release Page](https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models/releases) for installation guides and resources.
+
 #### Important
 **Please make sure that you have Git LFS installed before cloning this repository.**
 **Git LFS [official site/download page](https://git-lfs.com/)**
 **If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels). A download script will be developed in the near future.**
 
+### Git clone
 #### For Windows users
 To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS). Please refer to the installation guide of this repository.\
 Download the models you wish to use, as well as the characters' corresponding reference audio file.\
@@ -123,7 +127,7 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 - [x] Make a UI for generating voice models
 - [ ] Publish to the Release page
 - [X] Add a requirements.txt
-- [ ] Hugging Face Model Download Script
+- [X] ~~Hugging Face Model Download Script~~ Docker Image release
 - [ ] FAQ section
 
 ***The datasets used for training will not be published (at least for now)***
@@ -132,6 +136,7 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 ##### 2026-03-25
 - Added Dockerfile of different versions for building images
 - Fixed web_ui_spaces.py
+- Added v1.0.0cpu releases containing Docker images and guides
 
 ##### 2026-03-24 Added files for Hugging Face Docker Spaces
 - Added specific Python scripts to run with HF Docker Spaces.
