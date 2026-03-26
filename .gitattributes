@@ -1,3 +1,4 @@
 *.ckpt filter=lfs diff=lfs merge=lfs -text
 *.pth filter=lfs diff=lfs merge=lfs -text
-docker/std/cpu/initial.sh text eol=lf
+docker/v1.0.0cpu/std/initial.sh text eol=lf
+docker/v1.0.0cuda/std/initial.sh text eol=lf

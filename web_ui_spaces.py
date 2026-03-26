@@ -11,10 +11,12 @@ def start_backend():
         import subprocess
         from time import sleep
         import os
+        import torch
     except:
         print("Subprocess and Time modules not found.")
         exit()
     print("Starting backend server. Takes around 30 seconds")
+    print("Cuda status: " + str(torch.cuda.is_available()))
     global url
     global command
     foldername = r"/demo/gpt-sovits/api_v2.py"
