@@ -3,6 +3,7 @@ If you cannot download files through GitLFS, it is probably because the monthly 
 Check the [Installation](#installation) section for more information.
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
+
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)]
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lpkpaco/BTR_GPT-SoVITS_Voicemodels)
