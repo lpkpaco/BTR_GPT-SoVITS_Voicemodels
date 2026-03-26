@@ -16,4 +16,4 @@ if [ ! -d "$btr" ] || [ -z "$(ls -A "$btr" 2>/dev/null)" ]; then
     huggingface-cli download lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models --include "active/*" --local-dir /demo
 fi
 echo "Starting..."
-exec python -u web_ui_spaces.py --host 0.0.0.0 --port 7860
+exec python -u web_ui_spaces_cuda.py --host 0.0.0.0 --port 7860
