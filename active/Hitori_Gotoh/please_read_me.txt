@@ -1,0 +1,1 @@
+All model files has been migrated to Hugging Face. Please refer to the Installation section for guides and information.
