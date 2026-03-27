@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir torch==2.4.1+cpu torchvision==0.19.1+cpu torchaud
 
 RUN git clone https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models.git  /demo && rm -rf /demo/active
 
+
 RUN git clone --depth 1 https://github.com/RVC-Boss/GPT-SoVITS.git /demo/gpt-sovits && \
     pip install --no-cache-dir --upgrade -r /demo/gpt-sovits/requirements.txt && \
     pip install --no-cache-dir pyopenjtalk && \

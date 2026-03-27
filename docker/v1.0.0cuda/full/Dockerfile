@@ -21,24 +21,32 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && ln -sf /usr/bin/pip3 /usr/bin/pip \
     && python -m ensurepip --upgrade --default-pip \
     && python -m pip install --no-cache-dir --upgrade pip setuptools wheel
-RUN pip install --no-cache-dir --upgrade "huggingface_hub[cli]"
+RUN curl -LsSf https://hf.co/cli/install.sh | bash
 RUN useradd -m -u 1000 user
-RUN git clone https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models.git  /demo && rm -rf /demo/active
+RUN git clone https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models.git  /demo && \
+    rm -rf /demo/active && \
+    pip install -U huggingface_hub && \
+    hf download lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models --include "active/" --local-dir /demo
 RUN git clone --depth 1 https://github.com/RVC-Boss/GPT-SoVITS.git /demo/gpt-sovits && \
-    cd /demo/gpt-sovits && \
-    pip install --no-cache-dir --upgrade -r requirements.txt && \
-    pip install --no-cache-dir pyopenjtalk --no-build-isolation && \
+    pip install --no-cache-dir --upgrade -r /demo/gpt-sovits/requirements.txt && \
+    pip install --no-cache-dir pyopenjtalk && \
     python -c "import pyopenjtalk; pyopenjtalk._extract_dic()" && \
     pip install --no-cache-dir nltk && \
     python -m nltk.downloader -d /usr/local/share/nltk_data averaged_perceptron_tagger_eng punkt_tab cmudict && \
-    rm -rf .git
-USER root
-RUN mkdir -p /demo && chmod -R 777 /demo && chown -R 1000:1000 /demo
+    hf download lj1995/GPT-SoVITS --local-dir /demo/gpt-sovits/GPT_SoVITS/pretrained_models && \
+    mkdir -p /demo/gpt-sovits/GPT_SoVITS/pretrained_models/fast_langdetect && \
+    rm -rf /demo/gpt-sovits/.git
+RUN mkdir -p /demo && \
+    chown -R 1000:1000 /demo && \
+    chmod -R 777 /demo && \
+    PY_PATH=$(python3 -c "import pyopenjtalk, os; print(os.path.dirname(pyopenjtalk.__file__))") && \
+    chmod -R 777 "$PY_PATH"
 USER user
+ENV PATH="/home/user/.local/bin:$PATH"
 WORKDIR /demo
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
-RUN pip install --no-cache-dir --upgrade gradio
-RUN pip install --no-cache-dir --force-reinstall \torch torchvision torchaudio torchcodec --index-url https://download.pytorch.org/whl/cu128
+RUN pip install --no-cache-dir --upgrade -r requirements.txt && \
+    pip install --upgrade gradio
+RUN pip install --no-cache-dir --force-reinstall torch torchvision torchaudio torchcodec --index-url https://download.pytorch.org/whl/cu128
 COPY --chown=user . /demo
 EXPOSE 7860
-CMD ["/demo/initial.sh"]
+CMD ["python", "-u", "web_ui_spaces_cuda.py", "--host", "0.0.0.0", "--port", "7860"]
