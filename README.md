@@ -1,6 +1,6 @@
 # Important Notice
-If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).\
-Check the [Installation](#installation) section for more information.
+Model files have been fully migrated to this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).\ This repository does not contain any model files but only source codes.
+Check the [Installation](#installation) section for guides.
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
 
@@ -95,26 +95,48 @@ e.g. gotoh-v1-3 -> Voice model of Hitori Gotoh, version 1.3.1 (better performanc
 Installing through Docker is the most reliable and convenient way on Windows/Linux. Please check the [Release Page](https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models/releases) for installation guides and resources.
 
 #### Important
-**Please make sure that you have Git LFS installed before cloning this repository.**
-**Git LFS [official site/download page](https://git-lfs.com/)**
-**If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels). A download script will be developed in the near future.**
+**Downloading model files through Git LFS has been deprecated.**
+**Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels). A download script will be provided in the near future.**
 
-### Git clone
+### Git clone and Hugging Face
 #### For Windows users
-To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS). Please refer to the installation guide of this repository.\
+**Installing through Docker is the most reliable and convenient way on Windows. Please check the [Release Page](https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models/releases) for installation guides and resources.**
+
+**Alternative method:**
+To use this model, please download the [GPT-SoVITS repository](https://github.com/RVC-Boss/GPT-SoVITS). Please refer to the installation guide of this repository. Remember to get the pretrained models.\
 Download the models you wish to use, as well as the characters' corresponding reference audio file.\
-**If you cannot download files through GitLFS, it is probably because the monthly bandwidth has been used up. Please download through this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).**
-Copy the model files into the corresponding GPT-SoVITS directories (i.e. .ckpt into SoVITS model folders and .pth into GPT model folders)\
-**Remember to match the model versions (v4 models into folders labelled v4, etc.)**\
-Start webui.bat (Default language is simplified Chinese. Edit the file by replacing zh_CN with en_US).\
-Go to the inference page .\
-Select the models you wish to use. Upload the reference audio as instructed. The reference audio text can be copied from the reference audio file names. (e.g. if the file name is xxxx.wav, then the reference text is xxxx)\
-Select __ja__ as the reference audio language\
-Input the text that you wish to convert to speech. Select the language from the drop-down list.\
+**Download the model files through the action/ directory of this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).**
+Copy the contents of the whole downloaded active/ directory into the cloned active/ directory of this repository.\
+**Remember to match the character names.**\
+i.e. Directory structure:
+Bocchi-The-Rock-GPT-SoVITS-Models
+  -active
+    -Hitori_Gotoh
+      -gotoh-v1-3-1-e12.ckpt
+      -gotoh-v1-3-1-e16.ckpt
+      -...
+      -gotoh-v1-3-1_e4_s184.pth
+      -...
+    -Ikuyo_Kita
+      -...
+    -Ichiji_Nijika
+      -...
+  -asset
+  -docker
+  -...
+Install [Pytorch](https://pytorch.org/get-started/locally/) and the dependencies in the requirements.txt of this repository.\
+Run web_ui.py\
+Wait for the service to start on port **7860**\
+Go to `localhost:7860` in your browser\
+**Firstly, choose the character you wish to use. Then, scroll down and refresh the GPT model list and SoVITS model list. Select the models you want to use for *both* GPT and SoVITS models. Click the buttons to apply the changes.**\
+Input the text that you wish to convert to speech. Enter the 2-letter language code (e.g. ja for Japanese, en for English).\
 Click start.
 
-#### For Mac and Linux users
-Please refer to the documentation of the GPT-SoVITS directory. Further details will be added in the future.
+#### For macOS users
+Please refer to the documentation of the GPT-SoVITS directory and the steps above. Please be reminded that you might encounter compatibility issues.
+
+#### For Linux users
+Installing through Docker is the most reliable and convenient way on Linux. Please check the [Release Page](https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models/releases) for installation guides and resources.
 
 ## Future Work
 - [x] Upload a few demos (Pure laziness)
@@ -134,6 +156,10 @@ Please refer to the documentation of the GPT-SoVITS directory. Further details w
 ***The datasets used for training will not be published (at least for now)***
 
 ## Changelog
+##### 2026-03-27
+- Migrated all model files to HF and deprecated Git LFS.
+- Added Cuda 12.8 support for Docker installation.
+
 ##### 2026-03-25
 - Added Dockerfile of different versions for building images
 - Fixed web_ui_spaces.py

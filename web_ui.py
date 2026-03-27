@@ -129,7 +129,7 @@ if ui_lang == "en_US":
                 inputs = char_input,
                 outputs = sovits_input
             )
-    webui.launch(server_name = "0.0.0.0", server_port = 8100, share=True)
+    webui.launch(server_name = "0.0.0.0", server_port = 7860, share=True)
     print("User interface loaded. Please open it in your browser.")
 
 elif ui_lang == "zh_Hant":
@@ -193,7 +193,7 @@ elif ui_lang == "zh_Hant":
                 inputs = char_input,
                 outputs = sovits_input
             )
-    webui.launch(server_name = "0.0.0.0", server_port = 8100, share=True)
+    webui.launch(server_name = "0.0.0.0", server_port = 7860, share=True)
     print("使用者頁面完成加載。請在瀏覽器中打開。")
 
 elif ui_lang == "ja":
@@ -257,7 +257,7 @@ elif ui_lang == "ja":
                 inputs = char_input,
                 outputs = sovits_input
             )
-    webui.launch(server_name = "0.0.0.0", server_port = 8100, share= True)
+    webui.launch(server_name = "0.0.0.0", server_port = 7860, share= True)
     print("ユーザーインターフェースが読み込まれました。ブラウザで開いてください。")
 
 else:
