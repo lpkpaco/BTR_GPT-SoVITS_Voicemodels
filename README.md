@@ -92,7 +92,7 @@ e.g. gotoh-v1-3 -> Voice model of Hitori Gotoh, version 1.3.1 (better performanc
 
 ### Installation
 ### Docker
-Installing through Docker is the most reliable and convenient way on Windows/Linux. Please check the [Release Page](https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models/releases) for installation guides and resources.
+Docker images for both CPU and CUDA inferencing is available. Installing through Docker is the most reliable and convenient way on Windows/Linux. Please check the [Release Page](https://github.com/lpkpaco/Bocchi-The-Rock-GPT-SoVITS-Models/releases) for installation guides and resources.
 
 #### Important
 **Downloading model files through Git LFS has been deprecated.**
