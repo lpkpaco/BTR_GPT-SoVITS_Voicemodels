@@ -3,7 +3,7 @@ from request_spaces import apiinfer, changeGPT, changeSoVITS
 import os
 from pathlib import Path
 import subprocess
-import shlex
+#import shlex
 global url
 #global command
 os.environ["device"] = "cpu"
@@ -21,12 +21,12 @@ def start_backend():
     print("Starting backend server. Takes around 30 seconds")
     print("Cuda status: " + str(torch.cuda.is_available()))
     foldername = r"/demo/gpt-sovits/api_v2.py"
-    shlex_foldername = shlex.quote(foldername)
+    #shlex_foldername = shlex.quote(foldername)
     url = "http://0.0.0.0:9880/"
     #command = str("python " + foldername + r"\api_v2.py -Xfrozen_modules=off -d cuda -a 127.0.0.1 -p 9880 -c " + foldername + r"\GPT_SoVITS/configs/tts_infer.yaml")
     try: 
         print("Starting")
-        backend = subprocess.Popen(["python", shlex_foldername, "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(shlex_foldername))
+        backend = subprocess.Popen(["python", foldername, "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(foldername))
         sleep(30)
     except:
         print("Error when trying to start backend inference server")
