@@ -4,9 +4,19 @@ import os
 import subprocess
 from pathlib import Path
 from web_func import set_url, refresh_dropdowns_GPT, refresh_dropdowns_SoVITS, start_backend_spaces
+import torch
 
 is_spaces = Path("/demo").exists()
 if is_spaces:
+    if torch.cuda.is_available():
+        print("CUDA detected")
+        os.environ["device"] = "cuda"
+        os.environ["is_half"] = "True"
+    else:
+        print("CUDA not detected, using CPU")
+        os.environ["device"] = "cpu"
+        os.environ["is_half"] = "False"
+        os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
     from request import apiinfer_spaces as apiinfer, changeGPT_spaces as changeGPT, changeSoVITS_spaces as changeSoVITS
     os.environ["device"] = "cpu"
     os.environ["is_half"] = "False"
