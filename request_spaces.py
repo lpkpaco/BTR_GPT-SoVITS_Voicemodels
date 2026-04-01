@@ -3,8 +3,8 @@ def apiinfer(text, lang, char, url, current_path, topk, topp, temp):
         import requests
         from pydub import AudioSegment
         import uuid
-    except:
-        pass
+    except ModuleNotFoundError:
+        print("Required modules not found.")
     if char == "gotoh":
         audiopath = current_path + "/asset/reference_audio/人様の前で演奏できるように毎日6時間練習を続けた結果.wav"
         prompt = "人様の前で演奏できるように毎日6時間練習を続けた結果"
@@ -68,7 +68,7 @@ def changeGPT(pathname, url, char, scriptpath):
     else:
         return "Error"
     cmd = str(url) + "set_gpt_weights?weights_path=" + str(scriptpath) + "/active/" + str(dir_char) + str(pathname)
-    response = requests.get(cmd)
+    response = requests.get(cmd, timeout=60)
     if response.status_code == 200:
         print("Changed GPT model")
         return("Action completed")
@@ -89,7 +89,7 @@ def changeSoVITS(pathname, url, char, scriptpath):
     else:
         return "Error"
     cmd = str(url) + "set_sovits_weights?weights_path=" + str(scriptpath) + "/active/" + str(dir_char) + str(pathname)
-    response = requests.get(cmd)
+    response = requests.get(cmd, timeout=60)
     if response.status_code == 200:
         print("Changed SoVITS model")
         return("Action completed")

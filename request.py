@@ -2,7 +2,7 @@ def apiinfer(text, lang, char, url):
     try:
         import requests
     except:
-        pass
+        print("Required modules not found.")
     if char == "gotoh":
         audiopath = r"H:\github\BTR_GPT-SoVITS_Voicemodels\models\Hitori_Gotoh\reference_audio\人様の前で演奏できるように毎日6時間練習を続けた結果.wav" #Replace with your full path
         prompt = "人様の前で演奏できるように毎日6時間練習を続けた結果"
@@ -53,7 +53,7 @@ def changeGPT(pathname, url):
     except:
         pass
     cmd = str(url) + "set_gpt_weights?weights_path=" + str(pathname)
-    response = requests.get(cmd)
+    response = requests.get(cmd, timeout=60)
     if response.status_code == 200:
         print("Changed GPT model")
         return("Action completed")
@@ -66,7 +66,7 @@ def changeSoVITS(pathname, url):
     except:
         pass
     cmd = str(url) + "set_sovits_weights?weights_path=" + str(pathname)
-    response = requests.get(cmd)
+    response = requests.get(cmd, timeout=60)
     if response.status_code == 200:
         print("Changed SoVITS model")
         return("Action completed")

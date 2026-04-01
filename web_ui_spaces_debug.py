@@ -3,6 +3,9 @@ from request_spaces import apiinfer, changeGPT, changeSoVITS
 import os
 from pathlib import Path
 import subprocess
+import shlex
+global url
+#global command
 os.environ["device"] = "cpu"
 os.environ["is_half"] = "False"
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
@@ -15,14 +18,13 @@ def start_backend():
         print("Subprocess and Time modules not found.")
         exit()
     print("Starting backend server. Takes around 30 seconds")
-    global url
-    global command
     foldername = r"/demo/gpt-sovits/api_v2.py"
+    shlex_foldername = shlex.quote(foldername)
     url = "http://0.0.0.0:9880/"
     #command = str("python " + foldername + r"\api_v2.py -Xfrozen_modules=off -d cuda -a 127.0.0.1 -p 9880 -c " + foldername + r"\GPT_SoVITS/configs/tts_infer.yaml")
     try: 
         print("Starting")
-        backend = subprocess.Popen(["python", foldername, "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(foldername))
+        backend = subprocess.Popen(["python", shlex_foldername, "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(shlex_foldername))
         sleep(30)
     except:
         print("Error when trying to start backend inference server")
@@ -89,7 +91,7 @@ custom_css = """
 """
 def run_system_command(command):
     try:
-        result = subprocess.run(command, shell=True, capture_output=True, text=True, timeout=15)
+        result = subprocess.run(command, shell=False, capture_output=True, text=True, timeout=15)
         output = f"--- STDOUT ---\n{result.stdout}\n\n--- STDERR ---\n{result.stderr}"
         return output
     except Exception as e:

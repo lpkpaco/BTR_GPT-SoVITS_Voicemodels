@@ -2,8 +2,8 @@ def apiinfer(text, lang, char, url, current_path, topk, topp, temp):
     try:
         import requests
         from pydub import AudioSegment
-    except:
-        pass
+    except ModuleNotFoundError:
+        print("Required modules not found.")
     if char == "gotoh":
         audiopath = current_path + "/asset/reference_audio/人様の前で演奏できるように毎日6時間練習を続けた結果.wav"
         prompt = "人様の前で演奏できるように毎日6時間練習を続けた結果"
