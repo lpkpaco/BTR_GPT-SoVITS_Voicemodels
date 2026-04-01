@@ -1,7 +1,6 @@
 #try:
 from request import apiinfer, changeGPT, changeSoVITS
 import torch
-#import shlex
 #except:
 #print("Missing function. Download the required files.")
 #exit()
@@ -21,7 +20,6 @@ def start_backend():
     print("Starting backend server. Takes around 30 seconds")
     global command
     foldername = r"D:\GPT-SoVITS\api_v2.py" #Paste the directory name of the decompressed GPT-SoVITS directory here. Please use full path. (If the folder name is xxx, then enter \xxx)
-    #shlex_foldername = shlex.quote(foldername)
     #command = str("python " + shlex_foldername + r"\api_v2.py -Xfrozen_modules=off -d cuda -a 127.0.0.1 -p 9880 -c " + shlex_foldername + r"\GPT_SoVITS/configs/tts_infer.yaml")
     try: 
         print("Starting")

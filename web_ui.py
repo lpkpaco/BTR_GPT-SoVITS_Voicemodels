@@ -1,8 +1,8 @@
 import gradio as gr
 from inference import start_backend
 from request_webui import apiinfer, changeGPT, changeSoVITS
-import os
 from pathlib import Path
+from web_func import set_url, refresh_dropdowns_GPT, refresh_dropdowns_SoVITS
 dir_char_full = ""
 dir_char = ""
 current_path = str(Path(__file__).resolve().parent)
@@ -10,45 +10,6 @@ print("Starting user interface. Importing modules and starting backend inferenci
 start_backend()
 url = "http://127.0.0.1:9880/"
 print("Backend server started. Compiling user interface.")
-def list_gpt(char):
-    if char == "gotoh":
-        dir_char = "Hitori_Gotoh/"
-    elif char == "kita":
-        dir_char = "Ikuyo_Kita/"
-    elif char == "nijika":
-        dir_char = "Ichiji_Nijika/"
-    else:
-        return "Error"
-    dir_char = "active/" + dir_char
-    GPT_files = [f for f in os.listdir(dir_char) if f.endswith(".ckpt")]
-    GPT_files.sort()
-    return GPT_files
-def list_sovits(char):
-    if char == "gotoh":
-        dir_char = "Hitori_Gotoh/"
-    elif char == "kita":
-        dir_char = "Ikuyo_Kita/"
-    elif char == "nijika":
-        dir_char = "Ichiji_Nijika/"
-    else:
-        return "Error"
-    dir_char = "active/" + dir_char
-    SoVITS_files = [f for f in os.listdir(dir_char) if f.endswith(".pth")]
-    SoVITS_files.sort()
-    return SoVITS_files
-def set_url(url_value):
-    url = url_value
-    return ("URL changed to " + url)
-def refresh_dropdowns_GPT(char):
-    filelist = list_gpt(char)
-    return gr.Dropdown(
-        choices = filelist
-    )
-def refresh_dropdowns_SoVITS(char):
-    filelist = list_sovits(char)
-    return gr.Dropdown(
-        choices = filelist
-    )
 global url_input
 global char_input
 custom_css = """
