@@ -18,9 +18,6 @@ if is_spaces:
         os.environ["is_half"] = "False"
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
     from request import apiinfer_spaces as apiinfer, changeGPT_spaces as changeGPT, changeSoVITS_spaces as changeSoVITS
-    os.environ["device"] = "cpu"
-    os.environ["is_half"] = "False"
-    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
     OUT_DIR = Path("/demo/outputs")
     OUT_DIR.mkdir(exist_ok=True)
     start_backend_spaces()
