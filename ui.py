@@ -25,7 +25,7 @@ if is_spaces:
     cache_settings = (3600, 3600)
 else:
     from inference import start_backend
-    from request import apiinfer, changeGPT_local as changeGPT, changeSoVITS_local as changeSoVITS
+    from request import apiinfer_local as apiinfer, changeGPT_local as changeGPT, changeSoVITS_local as changeSoVITS
     start_backend()
     share_mode = True
     cache_settings = None

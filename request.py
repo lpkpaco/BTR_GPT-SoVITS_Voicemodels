@@ -63,7 +63,7 @@ def changeGPT(pathname, url):
 def changeSoVITS(pathname, url):
     try:
         import requests
-    except:
+    except ModuleNotFoundError:
         pass
     cmd = str(url) + "set_sovits_weights?weights_path=" + str(pathname)
     response = requests.get(cmd, timeout=60)
@@ -117,7 +117,7 @@ def changeSoVITS_local(pathname, url, char, scriptpath):
         print(f"Error: {response.status_code} - {response.text}")
         return("Unexpected Error")
     
-def apiinfer(text, lang, char, url, current_path, topk, topp, temp):
+def apiinfer_local(text, lang, char, url, current_path, topk, topp, temp):
     try:
         import requests
         from pydub import AudioSegment
