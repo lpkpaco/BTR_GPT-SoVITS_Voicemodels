@@ -2,5 +2,6 @@
 *.pth
 *.wav
 *.mp3
-*.Dockerfile
+Dockerfile
+.dockerignore
 *.sh
