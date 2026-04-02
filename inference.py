@@ -13,7 +13,7 @@ def start_backend():
         import subprocess
         from time import sleep
         import os
-    except:
+    except ModuleNotFoundError:
         print("Subprocess and Time modules not found.")
         exit()
     print("Cuda status: " + str(torch.cuda.is_available()))
@@ -26,8 +26,8 @@ def start_backend():
         print("Starting")
         backend = subprocess.Popen(["python", foldername], shell=False, cwd=os.path.dirname(foldername))
         sleep(30)
-    except:
-        print("Error when trying to start backend inference server")
+    except Exception as e:
+        print(f"Error when trying to start backend inference server: {e}")
         exit()
     print(f"Backend inference server started with PID {backend.pid}")
 cmdlist = """

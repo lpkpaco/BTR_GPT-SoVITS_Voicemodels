@@ -57,7 +57,7 @@ def start_backend_spaces():
         print("Starting")
         backend = subprocess.Popen(["python", foldername, "-p", "9880", "-a", "127.0.0.1"], shell=False, cwd=os.path.dirname(foldername))
         sleep(30)
-    except:
-        print("Error when trying to start backend inference server")
+    except Exception as e:
+        print(f"Error when trying to start backend inference server: {e}")
         exit()
     print(f"Backend inference server started with PID {backend.pid}")

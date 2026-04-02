@@ -1,7 +1,7 @@
 def apiinfer(text, lang, char, url):
     try:
         import requests
-    except:
+    except ModuleNotFoundError:
         print("Required modules not found.")
     if char == "gotoh":
         audiopath = r"H:\github\BTR_GPT-SoVITS_Voicemodels\models\Hitori_Gotoh\reference_audio\人様の前で演奏できるように毎日6時間練習を続けた結果.wav" #Replace with your full path
@@ -50,7 +50,7 @@ def apiinfer(text, lang, char, url):
 def changeGPT(pathname, url):
     try:
         import requests
-    except:
+    except ModuleNotFoundError:
         pass
     cmd = str(url) + "set_gpt_weights?weights_path=" + str(pathname)
     response = requests.get(cmd, timeout=60)
