@@ -1,11 +1,12 @@
 #try:
 from request import apiinfer, changeGPT, changeSoVITS
 import torch
+from pathlib import Path
 #except:
 #print("Missing function. Download the required files.")
 #exit()
 global url
-global command
+current_path = str(Path(__file__).resolve().parent)
 url = "http://127.0.0.1:9880/"
 def start_backend():
     try:
@@ -61,7 +62,7 @@ if __name__ == "__main__":
             character = str(input(characterlist))
         elif resp == "3":
             reqtext = input(str("Input the text (This script only supports Japanese for now): "))
-            apiresp = apiinfer(reqtext, "ja", character, url)
+            apiresp = apiinfer(reqtext, "ja", character, url, current_path, 17, 0.91, 0.6)
             print(apiresp)
             continue
         elif resp == "4":
