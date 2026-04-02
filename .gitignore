@@ -2,10 +2,9 @@
 *.pth
 *.wav
 *.mp3
-!/docker/
-**/Dockerfile
-**/.dockerignore
-!/docker/v1.0.1cpu/Dockerfile
-!/docker/v1.0.1cpu/.dockerignore
-!/docker/v1.0.1cuda/Dockerfile
-!/docker/v1.0.1cuda/.dockerignore
+Dockerfile
+.dockerignore
+!/docker/v1.0.1cpu/**/Dockerfile
+!/docker/v1.0.1cpu/**/.dockerignore
+!/docker/v1.0.1cuda/**/Dockerfile
+!/docker/v1.0.1cuda/**/.dockerignore
