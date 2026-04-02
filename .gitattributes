@@ -1,3 +1,1 @@
-docker/v1.0.0cpu/std/initial.sh text eol=lf
-docker/v1.0.0cuda/std/initial.sh text eol=lf
-docker/v1.0.0cpu/lite/initial.sh text eol=lf
+*.sh text eol=lf
