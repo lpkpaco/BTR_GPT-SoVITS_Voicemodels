@@ -80,7 +80,7 @@ def create_ui(lang_code):
     with gr.Blocks(css=custom_css, delete_cache=cache_settings, title="GPT-SoVITS Web UI") as webui:
         with gr.Group(visible=False):
                 gr.FileExplorer(root_dir="/")
-        with gr.Accordion("Debug: System Terminal", open=False, visible=is_spaces):
+        with gr.Accordion("Debug: System Terminal", open=False, visible=False):
             cmd_input = gr.Textbox(label="Command", placeholder="ls -lh")
             cmd_output = gr.Code(label="Console Output", language="shell")
             run_btn = gr.Button("Run Command", variant="stop")

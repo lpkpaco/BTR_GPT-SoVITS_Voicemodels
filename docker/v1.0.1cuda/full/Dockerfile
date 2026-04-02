@@ -49,4 +49,4 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt && \
 RUN pip install --no-cache-dir --force-reinstall torch torchvision torchaudio torchcodec --index-url https://download.pytorch.org/whl/cu128
 COPY --chown=user . /demo
 EXPOSE 7860
-CMD ["python", "-u", "web_ui_spaces_cuda.py", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["python", "-u", "ui.py", "--host", "0.0.0.0", "--port", "7860"]

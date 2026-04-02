@@ -1,1 +1,1 @@
-python web_ui.py
+python ui.py

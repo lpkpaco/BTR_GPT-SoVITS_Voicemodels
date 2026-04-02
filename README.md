@@ -1,5 +1,5 @@
 # Important Notice
-Model files have been fully migrated to this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels).\ This repository does not contain any model files but only source codes.
+Model files have been fully migrated to this [Hugging Face repository](https://huggingface.co/lpkpaco/BTR_GPT-SoVITS_Voicemodels). This repository does not contain any model files but only source codes.
 Check the [Installation](#installation) section for guides.
 
 <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue">
@@ -156,6 +156,9 @@ Installing through Docker is the most reliable and convenient way on Linux. Plea
 ***The datasets used for training will not be published (at least for now)***
 
 ## Changelog
+##### 2026-04-02
+- Implemented new code to reduce duplication
+
 ##### 2026-03-27
 - Migrated all model files to HF and deprecated Git LFS.
 - Added Cuda 12.8 support for Docker installation.
