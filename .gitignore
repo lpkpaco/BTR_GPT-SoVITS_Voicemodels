@@ -1,7 +1,5 @@
 *.ckpt
 *.pth
-*.wav
-*.mp3
 Dockerfile
 .dockerignore
 !/docker/v1.0.1cpu/**/Dockerfile
